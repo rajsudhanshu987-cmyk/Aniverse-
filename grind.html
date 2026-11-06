@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AniVerse - Anime discovery</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="top">
+  <a class="logo" href="#" data-view="home">Ani<span>Verse</span></a>
+  <nav class="links" aria-label="Main">
+    <button data-view="home" class="on" aria-current="page">Home</button>
+    <button data-view="browse">Browse</button>
+    <button data-view="list">My list <b id="count" aria-label="Saved anime count">0</b></button>
+  </nav>
+  <input id="q" type="search" placeholder="Search any anime..." aria-label="Search anime" aria-controls="grid">
+  <button id="lang" class="pill" type="button" title="Switch between English and Japanese titles">EN</button>
+</header>
+<p id="notice" class="notice" role="status" aria-live="polite" hidden></p>
+
+</body>
+</html>
