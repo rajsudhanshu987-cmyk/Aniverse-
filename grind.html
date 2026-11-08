@@ -1,30 +1,98 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AniVerse - Anime discovery</title>
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-<header class="top">
-  <a class="logo" href="#" data-view="home">Ani<span>Verse</span></a>
-  <nav class="links" aria-label="Main">
-    <button data-view="home" class="on" aria-current="page">Home</button>
-    <button data-view="browse">Browse</button>
-    <button data-view="list">My list <b id="count" aria-label="Saved anime count">0</b></button>
-  </nav>
-  <input id="q" type="search" placeholder="Search any anime..." aria-label="Search anime" aria-controls="grid">
-  <button id="lang" class="pill" type="button" title="Switch between English and Japanese titles">EN</button>
-</header>
-<p id="notice" class="notice" role="status" aria-live="polite" hidden></p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AniVerse - Anime discovery</title>
+    <link rel="stylesheet" href="luffy.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="top">
+      <a class="logo" href="#" data-view="home">Ani<span>Verse</span></a>
+      <nav class="links" aria-label="Main">
+        <button data-view="home" class="on" aria-current="page">Home</button>
+        <button data-view="browse">Browse</button>
+        <button data-view="list">
+          My list <b id="count" aria-label="Saved anime count">0</b>
+        </button>
+      </nav>
+      <input
+        id="q"
+        type="search"
+        placeholder="Search any anime..."
+        aria-label="Search anime"
+        aria-controls="grid"
+      />
+      <button
+        id="lang"
+        class="pill"
+        type="button"
+        title="Switch between English and Japanese titles"
+      >
+        EN
+      </button>
+    </header>
+    <p id="notice" class="notice" role="status" aria-live="polite" hidden></p>
 
-<main>
-  <section id="home" class="view">
-    <div id="hero" class="hero"></div>
-    <div id="rows"></div>
-  </section>
-
-</body>
-</html>
+    <main>
+      <section id="home" class="view">
+        <section class="hero" aria-labelledby="heroTitle">
+          <div class="hero-in">
+            <div class="hero-text">
+              <p class="eyebrow">Anime discovery</p>
+              <h1 id="heroTitle">
+                Find your next <span>favourite</span> anime
+              </h1>
+              <p class="lead">
+                Browse thousands of anime, watch trailers and save your
+                favourites in one place.
+              </p>
+              <div class="hero-btns">
+                <a class="btn" href="#discover">Explore now</a>
+                <button class="btn ghost" type="button" data-view="browse">
+                  Browse all
+                </button>
+              </div>
+              <dl class="hero-stats">
+                <div>
+                  <dt>Anime in the database</dt>
+                  <dd id="statTotal">...</dd>
+                </div>
+                <div>
+                  <dt>Genres you can filter</dt>
+                  <dd id="statGenres"></dd>
+                </div>
+                <div>
+                  <dt>In your list</dt>
+                  <dd id="statList">0</dd>
+                </div>
+              </dl>
+            </div>
+            <div class="hero-art">
+              <img
+                id="heroArt"
+                src="assets/hero-character.png"
+                alt="Anime character illustration"
+                loading="eager"
+              />
+              <div
+                id="heroPosters"
+                class="posters"
+                aria-hidden="true"
+                hidden
+              ></div>
+            </div>
+          </div>
+        </section>
+        <div class="wrap" id="discover">
+          <h2>Discover anime</h2>
+          <div id="chips" class="chips" aria-label="Choose a list"></div>
+          <div id="feed" class="grid"></div>
+          <p id="feedStatus" class="status" aria-live="polite"></p>
+          <div id="feedEnd" class="sentinel"></div>
+        </div>
+      </section>
