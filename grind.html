@@ -4,20 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>AniVerse - Anime discovery</title>
-    <link rel="stylesheet" href="luffy.css" />
+    <link rel="stylesheet" href="style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
   </head>
-  <body>
+  <body class="home-active">
     <header class="top">
       <a class="logo" href="#" data-view="home">Ani<span>Verse</span></a>
       <nav class="links" aria-label="Main">
-        <button data-view="home" class="on" aria-current="page">Home</button>
-        <button data-view="browse">Browse</button>
+        <button data-view="home" class="on" aria-current="page" data-i18n="navHome">Home</button>
+        <button data-view="browse" data-i18n="navBrowse">Browse</button>
         <button data-view="list">
-          My list <b id="count" aria-label="Saved anime count">0</b>
+          <span data-i18n="navList">My list</span>
+          <b id="count" aria-label="Saved anime count">0</b>
         </button>
       </nav>
       <input
@@ -25,6 +26,8 @@
         type="search"
         placeholder="Search any anime..."
         aria-label="Search anime"
+        data-i18n-placeholder="searchPlaceholder"
+        data-i18n-aria-label="searchLabel"
         aria-controls="grid"
       />
       <button
@@ -32,6 +35,8 @@
         class="pill"
         type="button"
         title="Switch between English and Japanese titles"
+        data-i18n-title="languageTitle"
+        data-i18n-aria-label="languageTitle"
       >
         EN
       </button>
@@ -43,56 +48,75 @@
         <section class="hero" aria-labelledby="heroTitle">
           <div class="hero-in">
             <div class="hero-text">
-              <p class="eyebrow">Anime discovery</p>
-              <h1 id="heroTitle">
-                Find your next <span>favourite</span> anime
-              </h1>
-              <p class="lead">
+              <p class="eyebrow" data-i18n="eyebrow">Anime discovery</p>
+              <h1 id="heroTitle"><span data-i18n="heroStart">Find your next</span><span class="hero-space" aria-hidden="true"> </span><span class="hero-title-accent" data-i18n="heroAccent">favourite</span><span class="hero-space" aria-hidden="true"> </span><span data-i18n="heroEnd">anime</span></h1>
+              <p class="lead" data-i18n="heroLead">
                 Browse thousands of anime, watch trailers and save your
                 favourites in one place.
               </p>
               <div class="hero-btns">
-                <a class="btn" href="#discover">Explore now</a>
-                <button class="btn ghost" type="button" data-view="browse">
+                <a class="btn" href="#discover" data-i18n="exploreNow">Explore now</a>
+                <button class="btn ghost" type="button" data-view="browse" data-i18n="browseAll">
                   Browse all
                 </button>
               </div>
               <dl class="hero-stats">
                 <div>
-                  <dt>Anime in the database</dt>
+                  <dt data-i18n="statAnime">Anime in the database</dt>
                   <dd id="statTotal">...</dd>
                 </div>
                 <div>
-                  <dt>Genres you can filter</dt>
+                  <dt data-i18n="statGenres">Genres you can filter</dt>
                   <dd id="statGenres"></dd>
                 </div>
                 <div>
-                  <dt>In your list</dt>
+                  <dt data-i18n="statList">In your list</dt>
                   <dd id="statList">0</dd>
                 </div>
               </dl>
             </div>
-            <div class="hero-art">
-              <img
-                id="heroArt"
-                src="assets/hero-character.png"
-                alt="Anime character illustration"
-                loading="eager"
-              />
-              <div
-                id="heroPosters"
-                class="posters"
-                aria-hidden="true"
-                hidden
-              ></div>
-            </div>
           </div>
         </section>
         <div class="wrap" id="discover">
-          <h2>Discover anime</h2>
-          <div id="chips" class="chips" aria-label="Choose a list"></div>
+          <h2 data-i18n="discover">Discover anime</h2>
+          <div id="chips" class="chips" aria-label="Choose a list" data-i18n-aria-label="chooseList"></div>
           <div id="feed" class="grid"></div>
           <p id="feedStatus" class="status" aria-live="polite"></p>
           <div id="feedEnd" class="sentinel"></div>
         </div>
       </section>
+
+      <section id="browse" class="view wrap" hidden>
+        <h2 data-i18n="browseTitle">Browse anime</h2>
+        <form id="filters" class="filters">
+          <select id="genre" aria-label="Genre" data-i18n-aria-label="genre"></select>
+          <select id="type" aria-label="Type" data-i18n-aria-label="type">
+            <option value="" data-i18n="allTypes">All types</option>
+            <option value="tv" data-i18n="tvSeries">TV series</option>
+            <option value="movie" data-i18n="movie">Movie</option>
+            <option value="ova">OVA</option>
+            <option value="ona" data-i18n="ona">ONA (web)</option>
+            <option value="special" data-i18n="special">Special</option>
+          </select>
+          <select id="status" aria-label="Status" data-i18n-aria-label="status">
+            <option value="" data-i18n="anyStatus">Any status</option>
+            <option value="airing" data-i18n="airingNow">Airing now</option>
+            <option value="complete" data-i18n="finished">Finished</option>
+            <option value="upcoming" data-i18n="upcoming">Upcoming</option>
+          </select>
+          <select id="score" aria-label="Minimum score" data-i18n-aria-label="minimumScore">
+            <option value="" data-i18n="anyScore">Any score</option>
+            <option value="6" data-i18n="score6">6+ score</option>
+            <option value="7" data-i18n="score7">7+ score</option>
+            <option value="8" data-i18n="score8">8+ score</option>
+            <option value="9" data-i18n="score9">9+ score</option>
+          </select>
+          <select id="sort" aria-label="Sort by" data-i18n-aria-label="sortBy">
+            <option value="popularity:asc" data-i18n="mostPopular">Most popular</option>
+            <option value="score:desc" data-i18n="highestRated">Highest rated</option>
+            <option value="start_date:desc" data-i18n="newest">Newest</option>
+            <option value="title:asc" data-i18n="alphabetical">A to Z</option>
+            <option value=":" data-i18n="bestMatch">Best match</option>
+          </select>
+          <button type="button" id="reset" class="pill" data-i18n="resetFilters">Reset filters</button>
+        </form>
