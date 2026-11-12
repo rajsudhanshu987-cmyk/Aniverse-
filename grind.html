@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>AniVerse - Anime discovery</title>
-    <link rel="stylesheet" href="luffy.css" />
+    <link rel="stylesheet" href="style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap"
       rel="stylesheet"
@@ -120,19 +120,17 @@
           </select>
           <button type="button" id="reset" class="pill" data-i18n="resetFilters">Reset filters</button>
         </form>
-
-          <p id="info" class="muted" aria-live="polite"></p>
+        <p id="info" class="muted" aria-live="polite"></p>
         <div id="grid" class="grid"></div>
         <p id="browseStatus" class="status" aria-live="polite"></p>
         <div id="browseEnd" class="sentinel"></div>
       </section>
 
-       <section id="list" class="view wrap" hidden>
+      <section id="list" class="view wrap" hidden>
         <h2 data-i18n="listTitle">My list</h2>
         <div id="mylist" class="grid"></div>
       </section>
     </main>
-
 
     <div
       id="modal"
@@ -160,5 +158,31 @@
     >
       &#8593;
     </button>
-    </body>
+
+    <footer class="site-foot">
+      <div class="foot-in">
+        <div class="foot-brand">
+          <a class="logo" href="#" data-view="home">Ani<span>Verse</span></a>
+          <p class="muted" data-i18n="footerIntro">
+            Discover anime, watch trailers and save your favourites.
+          </p>
+        </div>
+        <nav class="foot-links" aria-label="Footer" data-i18n-aria-label="footerNav">
+          <a href="#" data-view="home" data-i18n="navHome">Home</a>
+          <a href="#" data-view="browse" data-i18n="navBrowse">Browse</a>
+          <a href="#" data-view="list" data-i18n="navList">My list</a>
+        </nav>
+        <button type="button" class="pill" data-top data-i18n="backToTop">Back to top</button>
+      </div>
+      <p class="foot-note" data-i18n="footerDisclaimer">
+        Anime data from the Tenrai API (MyAnimeList). Trailers play from
+        YouTube. This site does not stream episodes. Artwork belongs to its
+        respective owners.
+      </p>
+      <p class="foot-note">
+        &copy; <span id="year"></span> AniVerse. <span data-i18n="footerCredit">Made for the Web Technology PBL.</span>
+      </p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
 </html>
