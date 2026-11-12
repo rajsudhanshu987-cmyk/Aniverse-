@@ -37,3 +37,43 @@ button {
 [hidden] {
   display: none !important;
 }
+
+.muted {
+  color: var(--mute);
+}
+.center {
+  text-align: center;
+  margin: 28px 0;
+}
+.wrap {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 28px 20px;
+}
+h2 {
+  font-size: 1.4rem;
+  margin-bottom: 14px;
+}
+/* header */
+.top {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 20px;
+  padding: 12px 20px;
+  background: rgba(11, 13, 18, 0.88);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+}
+.logo span {
+  color: var(--accent);
+}
