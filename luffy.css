@@ -77,3 +77,31 @@ h2 {
 .logo span {
   color: var(--accent);
 }
+
+.links {
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+}
+.links button {
+  background: none;
+  border: 0;
+  padding: 8px 14px;
+  border-radius: 8px;
+  color: var(--mute);
+  font-weight: 500;
+  white-space: nowrap;
+}
+.links button:hover,
+.links button.on {
+  color: var(--ink);
+  background: var(--panel);
+}
+.links b {
+  background: var(--accent);
+  color: #fff;
+  border-radius: 99px;
+  font-size: 0.75rem;
+  padding: 1px 7px;
+  margin-left: 4px;
+}
