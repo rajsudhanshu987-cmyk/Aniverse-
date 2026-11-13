@@ -105,3 +105,17 @@ h2 {
   padding: 1px 7px;
   margin-left: 4px;
 }
+
+#q {
+  flex: 1 1 220px;
+  max-width: 420px;
+  margin-left: auto;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  padding: 9px 18px;
+}
+#q:focus {
+  border-color: var(--accent);
+  outline: 0;
+}
