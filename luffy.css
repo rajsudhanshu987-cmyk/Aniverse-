@@ -127,3 +127,44 @@ h2 {
 .pill:hover {
   border-color: var(--accent);
 }
+
+/* hero */
+.hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(11, 13, 18, 0.98) 0%,
+      rgba(11, 13, 18, 0.9) 48%,
+      rgba(11, 13, 18, 0.5) 100%
+    ),
+    radial-gradient(circle at 78% 35%, #4a1f2f 0%, #1a1220 38%, var(--bg) 72%);
+  background-color: var(--bg);
+}
+.hero-skull {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 84%;
+  width: min(24vw, 300px);
+  height: auto;
+  transform: translate(-50%, -50%);
+  opacity: 0.6;
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.hero-skull:hover {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.06);
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-skull { transition: none; }
+  .hero-skull:hover { transform: translate(-50%, -50%); }
+}
+@media (max-width: 900px) {
+  .hero-skull { display: none; }
+}
