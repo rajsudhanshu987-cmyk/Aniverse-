@@ -211,3 +211,74 @@ h2 {
 html[lang="ja"] .hero h1 .hero-space {
   display: none;
 }
+
+.lead {
+  color: #d3d8e6;
+  max-width: 48ch;
+  margin-bottom: 26px;
+  font-size: 1.1rem;
+}
+.hero-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 34px;
+}
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 40px;
+  padding-top: 22px;
+  border-top: 1px solid #ffffff22;
+}
+.hero-stats div {
+  display: flex;
+  flex-direction: column-reverse; /* number on top, label below */
+}
+.hero-stats dd {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+.hero-stats dt {
+  color: var(--mute);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+#discover {
+  scroll-margin-top: 80px;
+}
+.meta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+  color: var(--mute);
+  font-size: 0.9rem;
+}
+.meta .s {
+  color: var(--gold);
+  font-weight: 600;
+}
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  border: 0;
+  border-radius: 10px;
+  padding: 11px 22px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.btn:hover {
+  filter: brightness(1.12);
+}
+.btn.ghost {
+  background: transparent;
+  border: 1px solid #fff5;
+  color: var(--ink);
+}
+.btn.ghost:hover {
+  border-color: var(--accent);
+}
