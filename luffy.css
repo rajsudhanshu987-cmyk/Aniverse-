@@ -340,3 +340,46 @@ html[lang="ja"] .hero h1 .hero-space {
 .heart.on {
   color: var(--accent);
 }
+
+
+.card h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-top: 8px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card p {
+  font-size: 0.8rem;
+  color: var(--mute);
+}
+.sk {
+  aspect-ratio: 2/3;
+  border-radius: 10px;
+  background: linear-gradient(
+    90deg,
+    var(--panel) 25%,
+    #1f2532 50%,
+    var(--panel) 75%
+  );
+  background-size: 200% 100%;
+  animation: sh 1.3s infinite;
+}
+@keyframes sh {
+  to {
+    background-position: -200% 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sk {
+    animation: none;
+  }
+  .card img {
+    transition: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
