@@ -383,3 +383,37 @@ html[lang="ja"] .hero h1 .hero-space {
     scroll-behavior: auto;
   }
 }
+
+/* filters */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.filters select {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 9px 12px;
+}
+.filters select:focus {
+  border-color: var(--accent);
+  outline: 0;
+}
+#info {
+  margin-bottom: 16px;
+  min-height: 1.5em;
+}
+.err {
+  color: var(--mute);
+  padding: 20px 0;
+}
+.err button {
+  background: none;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  border-radius: 8px;
+  padding: 4px 12px;
+  margin-left: 8px;
+}
