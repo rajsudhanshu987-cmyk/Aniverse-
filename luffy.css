@@ -417,3 +417,37 @@ html[lang="ja"] .hero h1 .hero-space {
   padding: 4px 12px;
   margin-left: 8px;
 }
+
+/* modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: #000c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+.box {
+  position: relative;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  max-width: 900px;
+  width: 100%;
+  max-height: 92vh;
+  overflow: auto;
+  padding: 24px;
+}
+.x {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: none;
+  border: 0;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--mute);
+  z-index: 2;
+}
